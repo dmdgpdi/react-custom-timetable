@@ -28,14 +28,16 @@ export default defineConfig({
       esmExternals: ['react'],
     },
   },
-  plugins: [
-    react(),
-    dts({ insertTypesEntry: true }),
-    sassDts(),
-    // {
-    //   ...sass(),
-    //   enforce: 'post',
-    //   apply: 'build',
-    // },
-  ],
+  css: {
+    modules: {
+      localsConvention: 'camelCase',
+    },
+    preprocessorOptions: {
+      scss: {
+        addtionalDate: `@import "./src/lib/components/Timetable.module.scss";
+          @import "./src/lib/components/CurrentTimeLine/CurrentTimeLine.module.scss";`,
+      },
+    },
+  },
+  plugins: [react(), dts({ insertTypesEntry: true }), sassDts()],
 });
