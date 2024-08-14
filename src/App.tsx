@@ -1,10 +1,10 @@
-import TimeTable from './Timetable';
+import TimeTable from './lib';
 import {
   startTime,
   endTime,
   slotTime,
   taskListWithouttaskColor,
-} from './Timetable/mocks/timetableMockData';
+} from './lib/mocks/timetableMockData';
 
 function App() {
   return (
