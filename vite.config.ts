@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import * as path from 'path';
-import sassDts from 'vite-plugin-sass-dts';
+// import sassDts from 'vite-plugin-sass-dts';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -28,16 +28,6 @@ export default defineConfig({
       esmExternals: ['react'],
     },
   },
-  css: {
-    modules: {
-      localsConvention: 'camelCase',
-    },
-    preprocessorOptions: {
-      scss: {
-        addtionalDate: `@import "./src/lib/components/Timetable.module.scss";
-          @import "./src/lib/components/CurrentTimeLine/CurrentTimeLine.module.scss";`,
-      },
-    },
-  },
-  plugins: [react(), dts({ insertTypesEntry: true }), sassDts()],
+
+  plugins: [react(), dts({ insertTypesEntry: true })],
 });
