@@ -1,5 +1,6 @@
 # FE1_E2E_sumtime_library ⏰
-![npm](https://img.shields.io/npm/v/react-custom-timetable.svg)
+[![npm](https://img.shields.io/npm/v/react-custom-timetable.svg)](https://www.npmjs.com/package/react-custom-timetable)
+
 
 kernel360 프론트엔드 과정 E2E 라이브러리 레포입니다  
 Timetable을 생성할 수 있는 컴포넌트 입니다. 직접 지정한 시작,종료 시간을 통해 Timetable의 영역이 그려지고 시간을 나누는 단위 또한 지정이 가능합니다. 다양한 커스텀 속성을 통해 원하는 시간표를 구현할 수 있습니다.
