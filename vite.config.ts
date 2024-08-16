@@ -9,7 +9,7 @@ export default defineConfig({
       entry: path.resolve(__dirname, './src/lib/index.ts'),
       name: 'react-custom-timetable',
       fileName: `index`,
-      formats: ['es'],
+      formats: ['es', 'cjs'],
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
