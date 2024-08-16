@@ -19,7 +19,7 @@ export default defineConfig({
           react: 'React',
           'react-dom': 'ReactDOM',
         },
-        // banner: '"use client";',
+        banner: '"use client";',
         interop: 'auto',
       },
       plugins: [],
@@ -37,5 +37,9 @@ export default defineConfig({
     },
   },
 
-  plugins: [react(), dts({ insertTypesEntry: true }), cssInjectedByJsPlugin()],
+  plugins: [
+    react(),
+    dts({ insertTypesEntry: true }),
+    cssInjectedByJsPlugin({ topExecutionPriority: false }),
+  ],
 });
