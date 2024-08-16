@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import * as path from 'path';
-import postprocess from 'rollup-plugin-postprocess';
 
 export default defineConfig({
   build: {
