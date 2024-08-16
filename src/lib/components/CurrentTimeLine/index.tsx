@@ -1,7 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
 
-import styled from './CurrentTimeLine.module.scss';
-import { calculateCurrentTimePosition, parseSize, getClassNameByType } from '../../utils';
+import styles from './CurrentTimeLine.module.scss';
+import {
+  calculateCurrentTimePosition,
+  parseSize,
+  getClassNameByType,
+} from '../../utils';
 import { TypeContext } from '../../contexts/TypeContext';
 
 interface CurrentTimeLineProps {
@@ -11,7 +15,12 @@ interface CurrentTimeLineProps {
   currentTimeLineStyle?: string;
 }
 
-function CurrentTimeLine({ startTime, endTime, timeTableSize, currentTimeLineStyle }: CurrentTimeLineProps) {
+function CurrentTimeLine({
+  startTime,
+  endTime,
+  timeTableSize,
+  currentTimeLineStyle,
+}: CurrentTimeLineProps) {
   const type = useContext(TypeContext);
   const [currentTime, setCurrentTime] = useState<Date | null>(null);
   const { value, format } = parseSize(timeTableSize);
@@ -26,13 +35,28 @@ function CurrentTimeLine({ startTime, endTime, timeTableSize, currentTimeLineSty
     return () => clearInterval(intervalId);
   }, []);
 
-  const { currentTimePosition } = calculateCurrentTimePosition(currentTime, startTime, endTime);
+  const { currentTimePosition } = calculateCurrentTimePosition(
+    currentTime,
+    startTime,
+    endTime,
+  );
   const currentTimeLinePosition = `${(currentTimePosition * value) / 100}${format}`;
-  const dynamicStyle: React.CSSProperties = type === 'ROW' ? { left: currentTimeLinePosition } : { top: currentTimeLinePosition };
+  const dynamicStyle: React.CSSProperties =
+    type === 'ROW'
+      ? { left: currentTimeLinePosition }
+      : { top: currentTimeLinePosition };
 
-  const mergedStyle: React.CSSProperties = { ...dynamicStyle, ...{ border: currentTimeLineStyle } };
+  const mergedStyle: React.CSSProperties = {
+    ...dynamicStyle,
+    ...{ border: currentTimeLineStyle },
+  };
 
-  return <hr className={getClassNameByType(styled, 'line', type)} style={mergedStyle} />;
+  return (
+    <hr
+      className={getClassNameByType(styles, 'line', type)}
+      style={mergedStyle}
+    />
+  );
 }
 
 export default CurrentTimeLine;

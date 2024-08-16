@@ -2,16 +2,14 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
 import * as path from 'path';
-import sassDts from 'vite-plugin-sass-dts';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, './src/lib/index.ts'),
       name: 'react-custom-timetable',
-      formats: ['es', 'cjs'],
-      fileName: (format) => `index.${format}.js`,
+      fileName: `index`,
+      formats: ['es'],
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
@@ -20,24 +18,13 @@ export default defineConfig({
           react: 'React',
           'react-dom': 'ReactDOM',
         },
-        banner: '"use client";',
         interop: 'auto',
+        banner: '"use client";\nimport "./style.css";\n',
       },
     },
     commonjsOptions: {
       esmExternals: ['react'],
     },
   },
-  css: {
-    modules: {
-      localsConvention: 'camelCase',
-    },
-    preprocessorOptions: {
-      scss: {
-        addtionalDate: `@import "./src/lib/components/Timetable.module.scss";
-          @import "./src/lib/components/CurrentTimeLine/CurrentTimeLine.module.scss";`,
-      },
-    },
-  },
-  plugins: [react(), dts({ insertTypesEntry: true }), sassDts()],
+  plugins: [react(), dts({ insertTypesEntry: true })],
 });

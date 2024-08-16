@@ -1,3 +1,4 @@
+import React from 'react';
 import TimeTable from './lib';
 import {
   startTime,
