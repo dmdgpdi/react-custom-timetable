@@ -1,4 +1,4 @@
-import { getTodayFromTime } from '../utils';
+import { getTodayFromTime } from '../lib/utils';
 
 const startTime = getTodayFromTime(0, 0, 1);
 const endTime = getTodayFromTime(23, 59, 59);
