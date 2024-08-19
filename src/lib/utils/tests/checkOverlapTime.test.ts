@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import { getDateFromTime, checkTimeOverlap } from '..';
+import { getTodayFromTime, checkTimeOverlap } from '..';
 
 describe('taskList를 받았을 떄, 겹치는 시간이 있는지 확인하기', () => {
   describe('시간이 겹치는 taskList를 받을 떄', () => {
@@ -9,16 +9,16 @@ describe('taskList를 받았을 떄, 겹치는 시간이 있는지 확인하기'
         title: 'title1',
         content: 'subTitle1',
         taskColor: 'red',
-        startTime: getDateFromTime(12, 0, 0),
-        endTime: getDateFromTime(13, 0, 0),
+        startTime: getTodayFromTime(12, 0, 0),
+        endTime: getTodayFromTime(13, 0, 0),
       };
       const task2 = {
         id: 2,
         title: 'title2',
         content: 'subTitle2',
         taskColor: 'blue',
-        startTime: getDateFromTime(12, 10, 0),
-        endTime: getDateFromTime(12, 30, 0),
+        startTime: getTodayFromTime(12, 10, 0),
+        endTime: getTodayFromTime(12, 30, 0),
       };
 
       // when
@@ -38,16 +38,16 @@ describe('taskList를 받았을 떄, 겹치는 시간이 있는지 확인하기'
         title: 'title1',
         content: 'subTitle1',
         taskColor: 'red',
-        startTime: getDateFromTime(12, 0, 0),
-        endTime: getDateFromTime(13, 0, 0),
+        startTime: getTodayFromTime(12, 0, 0),
+        endTime: getTodayFromTime(13, 0, 0),
       };
       const task2 = {
         id: 2,
         title: 'title2',
         content: 'subTitle2',
         taskColor: 'blue',
-        startTime: getDateFromTime(12, 30, 0),
-        endTime: getDateFromTime(14, 30, 0),
+        startTime: getTodayFromTime(12, 30, 0),
+        endTime: getTodayFromTime(14, 30, 0),
       };
 
       // when
@@ -67,16 +67,16 @@ describe('taskList를 받았을 떄, 겹치는 시간이 있는지 확인하기'
         title: 'title1',
         content: 'subTitle1',
         taskColor: 'red',
-        startTime: getDateFromTime(12, 0, 0),
-        endTime: getDateFromTime(13, 0, 0),
+        startTime: getTodayFromTime(12, 0, 0),
+        endTime: getTodayFromTime(13, 0, 0),
       };
       const task2 = {
         id: 2,
         title: 'title2',
         content: 'subTitle2',
         taskColor: 'blue',
-        startTime: getDateFromTime(11, 30, 0),
-        endTime: getDateFromTime(13, 30, 0),
+        startTime: getTodayFromTime(11, 30, 0),
+        endTime: getTodayFromTime(13, 30, 0),
       };
 
       // when
@@ -98,16 +98,16 @@ describe('taskList를 받았을 떄, 겹치는 시간이 있는지 확인하기'
         title: 'title1',
         content: 'subTitle1',
         taskColor: 'red',
-        startTime: getDateFromTime(12, 0, 0),
-        endTime: getDateFromTime(13, 0, 0),
+        startTime: getTodayFromTime(12, 0, 0),
+        endTime: getTodayFromTime(13, 0, 0),
       };
       const task2 = {
         id: 2,
         title: 'title2',
         content: 'subTitle2',
         taskColor: 'blue',
-        startTime: getDateFromTime(13, 10, 0),
-        endTime: getDateFromTime(13, 50, 0),
+        startTime: getTodayFromTime(13, 10, 0),
+        endTime: getTodayFromTime(13, 50, 0),
       };
 
       const result = checkTimeOverlap(
@@ -126,16 +126,16 @@ describe('taskList를 받았을 떄, 겹치는 시간이 있는지 확인하기'
         title: 'title1',
         content: 'subTitle1',
         taskColor: 'red',
-        startTime: getDateFromTime(12, 0, 0),
-        endTime: getDateFromTime(13, 0, 0),
+        startTime: getTodayFromTime(12, 0, 0),
+        endTime: getTodayFromTime(13, 0, 0),
       };
       const task2 = {
         id: 2,
         title: 'title2',
         content: 'subTitle2',
         taskColor: 'blue',
-        startTime: getDateFromTime(13, 0, 0),
-        endTime: getDateFromTime(13, 50, 0),
+        startTime: getTodayFromTime(13, 0, 0),
+        endTime: getTodayFromTime(13, 50, 0),
       };
 
       const result = checkTimeOverlap(

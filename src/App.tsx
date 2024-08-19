@@ -5,7 +5,7 @@ import {
   endTime,
   slotTime,
   taskListWithouttaskColor,
-} from './lib/mocks/timetableMockData';
+} from './mocks/timetableMockData';
 
 function App() {
   return (
