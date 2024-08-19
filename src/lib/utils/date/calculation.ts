@@ -52,7 +52,7 @@ const checkTimeOverlap = (
   );
 };
 
-const getDateFromTime = (hours: number, minutes: number, second: number) => {
+const getTodayFromTime = (hours: number, minutes: number, second: number) => {
   // mock data용으로 배포시 삭제 될 예정.
   const now = new Date();
   const year = now.getFullYear();
@@ -122,5 +122,5 @@ export {
   checkDateInRange,
   checkTaskListOverlap,
   checkTimeOverlap,
-  getDateFromTime,
+  getTodayFromTime,
 };

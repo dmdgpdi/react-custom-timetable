@@ -5,7 +5,7 @@ export {
   checkDateInRange,
   checkTaskListOverlap,
   checkTimeOverlap,
-  getDateFromTime,
+  getTodayFromTime,
 } from './date/calculation';
 export { checkFirstTaskUnit, selectTaskListByTimeRange } from './date/filter';
 export { hasKey, insertKey } from './map';
