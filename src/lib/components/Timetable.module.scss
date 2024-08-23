@@ -86,7 +86,6 @@
   flex-direction: column;
   gap: 10px;
   align-items: flex-start;
-  font-size: 1em;
 }
 
 .buttonInherit {
@@ -95,6 +94,9 @@
   padding: 0;
   border: 0;
   position: absolute;
+  font-size: inherit;
+  text-shadow: inherit;
+  cursor: pointer;
 
   &.row {
     height: 100%;
@@ -115,6 +117,7 @@
   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3);
   color: #333;
   box-sizing: border-box;
+  text-shadow: none;
 }
 
 .buttonLayout {
@@ -151,6 +154,7 @@
 
 .scheduleContent {
   line-height: 100%;
+  font-size: 20px;
 }
 
 .popoverTitle {
@@ -177,7 +181,6 @@
 }
 
 .title {
-  font-size: 1em;
   margin: 0;
 }
 
