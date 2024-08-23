@@ -22,7 +22,7 @@ function App() {
           timeTableStyle={{ backgroundColor: 'white' }}
           timeSlotStyle={{ color: 'black', fontSize: '20px' }}
           taskSlotStyle={{
-            color: 'black',
+            color: 'white',
             textShadow: '1px 1px 1px gray',
             fontSize: '32px',
           }}
