@@ -2,7 +2,7 @@
   "name": "react-custom-timetable",
   "description": "custom timetable for react",
   "private": false,
-  "version": "0.0.8",
+  "version": "0.0.9",
   "keywords": [
     "timetable",
     "scheduler"
