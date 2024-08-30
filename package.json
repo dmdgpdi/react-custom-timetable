@@ -34,6 +34,11 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "@floating-ui/react": "^0.26.22",
+    "date-fns": "^3.6.0",
+    "randomcolor": "^0.6.2"
+  },
   "peerDependencies": {
     "@floating-ui/react": "^0.26.22",
     "date-fns": "^3.6.0",
