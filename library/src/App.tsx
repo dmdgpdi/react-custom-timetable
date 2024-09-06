@@ -7,6 +7,10 @@ import {
   taskListWithouttaskColor,
 } from './mocks/timetableMockData';
 
+// yarn berry로 옮겼다.
+// 1. monorepo 적용하시
+// 2. esbuild로 바꿔보기.
+
 function App() {
   return (
     <>

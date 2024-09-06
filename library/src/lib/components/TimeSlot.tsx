@@ -22,5 +22,3 @@ function TimeSlot({ slotStartTime, timeSlotStyle }: TimeSlotProps) {
     </div>
   );
 }
-
-export default TimeSlot;
