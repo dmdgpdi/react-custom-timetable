@@ -14,7 +14,8 @@
     "noFallthroughCasesInSwitch": true,
     "declaration": true,
     "composite": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
   },
   "include": ["./src/lib", "./src/custom.d.ts", "vite.config.ts"],
   "exclude": ["./node_modules"]

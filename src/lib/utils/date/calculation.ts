@@ -20,6 +20,12 @@ const calculateTargetPosition = (
     startPercent =
       ((targetStartMilliseconds - startMilliseconds) / slotTime) * 100;
   }
+  else if (
+    targetStartMilliseconds < startMilliseconds 
+  ) {
+    // task의 시작 시간이 slot의 시작 시간보다 늦다면(즉 slot 전에 시작했다면)
+    startPercent = 0;
+  }
 
   if (targetEndMilliseconds < endMilliseconds) {
     // task의 끝나는 시간이 slot의 종료 시간보다 늦다면(즉 slot 도중에 끝난다면)
@@ -27,7 +33,11 @@ const calculateTargetPosition = (
       ((targetEndMilliseconds - startMilliseconds) / slotTime) * 100;
   }
 
+
   const endPercent = totalEndPercent - startPercent;
+  if(endPercent < 0) {
+    return { startPercent: 0, endPercent: 0 };
+  }
 
   return { startPercent, endPercent };
 };
