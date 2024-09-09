@@ -11,7 +11,12 @@ import {
   checkFirstTaskUnit,
   checkDateInRange,
 } from '../utils';
-import { PopoverType, BaseTask, TimetableDirectionType, TaskThemeType } from './Timetable.type';
+import {
+  PopoverType,
+  BaseTask,
+  TimetableDirectionType,
+  TaskThemeType,
+} from './Timetable.type';
 import { ContextProvider } from '../contexts';
 import CurrentTimeLine from './CurrentTimeLine';
 import Slot from './Slot';
@@ -64,8 +69,13 @@ function Timetable<T extends BaseTask>({
 
   const slotSize = distributeSize(value, timeSlots.length, format);
   const uniqueTaskIdMap = new Map();
-  const isCurrentTimeVisible = displayCurrentTime && checkDateInRange(timeSlots[0], new Date(), timeSlots[timeSlots.length - 1]);
-  const checkOverlapFromTaskList = useCallback((currentTaskList: T[]) => checkTaskListOverlap(currentTaskList), [taskList]);
+  const isCurrentTimeVisible =
+    displayCurrentTime &&
+    checkDateInRange(timeSlots[0], new Date(), timeSlots[timeSlots.length - 1]);
+  const checkOverlapFromTaskList = useCallback(
+    (currentTaskList: T[]) => checkTaskListOverlap(currentTaskList),
+    [taskList],
+  );
 
   if (checkOverlapFromTaskList(taskList)) {
     throw new Error('task time is overlap. please check your taskList');
@@ -80,7 +90,10 @@ function Timetable<T extends BaseTask>({
       }}
       taskTheme={taskTheme}
     >
-      <div className={getClassNameByType(styles, 'container', timetableDirection)} style={timeTableStyle}>
+      <div
+        className={getClassNameByType(styles, 'container', timetableDirection)}
+        style={timeTableStyle}
+      >
         {isCurrentTimeVisible && (
           <CurrentTimeLine
             startTime={totalStartTime}
@@ -91,8 +104,15 @@ function Timetable<T extends BaseTask>({
         )}
         {timeSlots.map((time, index) => {
           const key = `${time.toDateString()}${index}`;
-          const taskItemList = selectTaskListByTimeRange(taskList, time.getHours(), slotRange);
-          const isFirstTaskUnitList = checkFirstTaskUnit(taskItemList, uniqueTaskIdMap);
+          const taskItemList = selectTaskListByTimeRange(
+            taskList,
+            time.getHours(),
+            slotRange,
+          );
+          const isFirstTaskUnitList = checkFirstTaskUnit(
+            taskItemList,
+            uniqueTaskIdMap,
+          );
 
           return (
             <Slot

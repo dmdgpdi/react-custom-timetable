@@ -1,20 +1,24 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "es6",
     "module": "ESNext",
-    "skipLibCheck": true,
-    "moduleResolution": "Node",
+    "jsx": "react-jsx",
+    "moduleResolution": "Bundler",
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": false,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "declaration": true,
-    "composite": true,
-    "allowSyntheticDefaultImports": true
+    "composite": true
   },
   "include": ["./src/lib", "./src/custom.d.ts", "vite.config.ts"],
   "exclude": ["./node_modules"]
