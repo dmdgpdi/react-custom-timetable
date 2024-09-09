@@ -4399,6 +4399,7 @@ __metadata:
   resolution: "officialdoc@workspace:officialdoc"
   dependencies:
     "@types/react": "npm:^18.3.5"
+    "@types/react-dom": "npm:^18.3.0"
     "@vitejs/plugin-react": "npm:^4.3.1"
     react: "npm:^18.3.1"
     react-custom-library: "npm:*"

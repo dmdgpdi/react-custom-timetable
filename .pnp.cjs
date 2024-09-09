@@ -5282,6 +5282,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["officialdoc", "workspace:officialdoc"],\
           ["@types/react", "npm:18.3.5"],\
+          ["@types/react-dom", "npm:18.3.0"],\
           ["@vitejs/plugin-react", "virtual:83a8a79f8a711b91f7269216abb4cefd10e2a80d95ed0f7e2e53453381405fe56192b856e29aea27ebc20a48c0fd97a0758134ec0fdce580ee95c161d4856357#npm:4.3.1"],\
           ["react", "npm:18.3.1"],\
           ["react-custom-library", "virtual:83a8a79f8a711b91f7269216abb4cefd10e2a80d95ed0f7e2e53453381405fe56192b856e29aea27ebc20a48c0fd97a0758134ec0fdce580ee95c161d4856357#npm:0.1.0"],\
@@ -6460,7 +6461,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["react-custom-library", "virtual:83a8a79f8a711b91f7269216abb4cefd10e2a80d95ed0f7e2e53453381405fe56192b856e29aea27ebc20a48c0fd97a0758134ec0fdce580ee95c161d4856357#npm:0.1.0"],\
           ["@types/react", "npm:18.3.5"],\
-          ["@types/react-dom", null],\
+          ["@types/react-dom", "npm:18.3.0"],\
           ["mongodb-stitch-browser-sdk", "npm:4.9.0"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:61fb6211059a5041bdf077c4f30db536b5be197fd849ff37f3f6e130f91c5139cde1989f84d3d0c3517fa63e182c68e954bb852086f81ee6fa3faf06999696c7#npm:18.3.1"],\
