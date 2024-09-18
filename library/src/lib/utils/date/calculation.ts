@@ -53,7 +53,6 @@ const checkTimeOverlap = (
 };
 
 const getTodayFromTime = (hours: number, minutes: number, second: number) => {
-  // mock data용으로 배포시 삭제 될 예정.
   const now = new Date();
   const year = now.getFullYear();
   const month = (now.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-indexed

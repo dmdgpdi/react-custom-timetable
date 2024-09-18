@@ -31,7 +31,10 @@ function Slot<T extends BaseTask>({
   const style = type === 'ROW' ? { width: slotSize } : { height: slotSize };
 
   return (
-    <div className={getClassNameByType(styles, 'slot', type)} style={{ ...slotStyle, ...style }}>
+    <div
+      className={getClassNameByType(styles, 'slot', type)}
+      style={{ ...slotStyle, ...style }}
+    >
       <TimeSlot slotStartTime={slotStartTime} timeSlotStyle={timeSlotStyle} />
       <TaskSlot
         slotStartTime={slotStartTime}

@@ -14,14 +14,14 @@
     "dmdgpdi",
     "haejinyun"
   ],
-  "types": "dist/index.d.ts",
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
   "files": [
@@ -43,6 +43,7 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
     "@rollup/plugin-inject": "^5.0.5",
     "@types/randomcolor": "^0.5.9",
     "@types/react": "^18.3.5",
