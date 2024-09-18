@@ -5,13 +5,15 @@
   "scripts": {
     "lib": "yarn workspace react-custom-timetable",
     "doc": "yarn workspace officialdoc",
+    "example": "yarn workspace example",
     "dev:doc": "yarn workspace officialdoc dev",
     "dev:lib": "yarn workspace react-custom-timetable dev"
   },
   "workspaces": {
     "packages": [
       "library",
-      "officialdoc"
+      "officialdoc",
+      "example"
     ]
   },
   "devDependencies": {
