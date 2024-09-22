@@ -4,7 +4,7 @@ import esbuild from 'esbuild';
 import { sassPlugin } from 'esbuild-sass-plugin';
 
 const baseConfig = {
-  entryPoints: ['src/lib/index.ts'],
+  entryPoints: ['src/index.ts'],
   outdir: 'dist',
   bundle: true,
   sourcemap: true,

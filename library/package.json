@@ -19,7 +19,7 @@
   "module": "./dist/index.js",
   "exports": {
     ".": {
-      "types": "./dist/src/lib/index.d.ts",
+      "types": "./dist/src/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     }
