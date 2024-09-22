@@ -2051,6 +2051,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/date-fns", [\
+      ["npm:2.6.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@types-date-fns-npm-2.6.0-516bcda282-10c0.zip/node_modules/@types/date-fns/",\
+        "packageDependencies": [\
+          ["@types/date-fns", "npm:2.6.0"],\
+          ["date-fns", "npm:4.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/estree", [\
       ["npm:1.0.5", {\
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/@types-estree-npm-1.0.5-5b7faed3b4-10c0.zip/node_modules/@types/estree/",\
@@ -3594,6 +3604,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/date-fns-npm-3.6.0-e59d980978-10c0.zip/node_modules/date-fns/",\
         "packageDependencies": [\
           ["date-fns", "npm:3.6.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:4.1.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/date-fns-npm-4.1.0-764604ee0f-10c0.zip/node_modules/date-fns/",\
+        "packageDependencies": [\
+          ["date-fns", "npm:4.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -7497,6 +7514,7 @@ const RAW_RUNTIME_STATE =
           ["@floating-ui/react", "virtual:0f7d54ad1edfb7f5c6fad2579609a73d9b97d29ed1138496ea45787cf874cee8be792a3f5397d020f8e5004b9981e4dcea05dccc142ec05e89c6b1321ad2021b#npm:0.26.23"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@rollup/plugin-inject", "virtual:0f7d54ad1edfb7f5c6fad2579609a73d9b97d29ed1138496ea45787cf874cee8be792a3f5397d020f8e5004b9981e4dcea05dccc142ec05e89c6b1321ad2021b#npm:5.0.5"],\
+          ["@types/date-fns", "npm:2.6.0"],\
           ["@types/randomcolor", "npm:0.5.9"],\
           ["@types/react", "npm:18.3.7"],\
           ["@types/react-dom", "npm:18.3.0"],\
@@ -7533,6 +7551,7 @@ const RAW_RUNTIME_STATE =
           ["@floating-ui/react", "virtual:61fb6211059a5041bdf077c4f30db536b5be197fd849ff37f3f6e130f91c5139cde1989f84d3d0c3517fa63e182c68e954bb852086f81ee6fa3faf06999696c7#npm:0.26.23"],\
           ["@jest/globals", "npm:29.7.0"],\
           ["@rollup/plugin-inject", "virtual:0f7d54ad1edfb7f5c6fad2579609a73d9b97d29ed1138496ea45787cf874cee8be792a3f5397d020f8e5004b9981e4dcea05dccc142ec05e89c6b1321ad2021b#npm:5.0.5"],\
+          ["@types/date-fns", "npm:2.6.0"],\
           ["@types/randomcolor", "npm:0.5.9"],\
           ["@types/react", "npm:18.3.5"],\
           ["@types/react-dom", "npm:18.3.0"],\

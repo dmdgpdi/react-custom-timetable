@@ -19,7 +19,7 @@
   "module": "./dist/index.js",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
+      "types": "./dist/src/lib/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     }
@@ -30,7 +30,7 @@
   "scripts": {
     "dev": "vite",
     "build": "yarn clean && yarn build:tsc && yarn build:js",
-    "build:tsc": "yarn tsc --emitDeclarationOnly",
+    "build:tsc": "yarn tsc",
     "build:js": "node esbuild.config.js",
     "clean": "rimraf -rf dist",
     "lint": "eslint .",
@@ -48,6 +48,7 @@
   "devDependencies": {
     "@jest/globals": "^29.7.0",
     "@rollup/plugin-inject": "^5.0.5",
+    "@types/date-fns": "^2.6.0",
     "@types/randomcolor": "^0.5.9",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
