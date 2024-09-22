@@ -10,7 +10,6 @@ import {
 function App() {
   return (
     <>
-      <h1>hi</h1>
       <div style={{ height: '500px' }}>
         <TimeTable
           totalStartTime={startTime}
@@ -31,7 +30,7 @@ function App() {
         />
       </div>
 
-      {/* <div style={{ height: '500px' }}>
+      <div style={{ height: '500px' }}>
         <TimeTable
           totalStartTime={startTime}
           totalEndTime={endTime}
@@ -49,7 +48,7 @@ function App() {
           }}
           ellipsisText="..."
         />
-      </div> */}
+      </div>
     </>
   );
 }

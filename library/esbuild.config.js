@@ -15,8 +15,9 @@ const baseConfig = {
   ],
   loader: {
     '.png': 'file',
-    '.css': 'css',
-    '.scss': 'css',
+  },
+  banner: {
+    js: '"use client";\nimport "./index.css";\n',
   },
   external: ['react', 'react-dom'],
 };
