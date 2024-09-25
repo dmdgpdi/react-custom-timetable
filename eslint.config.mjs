@@ -4,7 +4,7 @@ import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
 
 export default [
-  { files: ['**/*.{ts,tsx}'] },
+  { files: ['**/*.{ts,tsx}'], ignores: ['**/dist/**'], // dist 폴더와 테스트 파일 제외 },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,

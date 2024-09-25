@@ -47,6 +47,7 @@
     "react-dom": ">=18.0.0"
   },
   "devDependencies": {
+    "@eslint/js": "9.10.0",
     "@jest/globals": "^29.7.0",
     "@rollup/plugin-inject": "^5.0.5",
     "@types/date-fns": "^2.6.0",
@@ -57,6 +58,7 @@
     "esbuild": "^0.24.0",
     "esbuild-plugin-inline-image": "^0.0.9",
     "esbuild-sass-plugin": "^3.3.1",
+    "eslint": "9.10.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rimraf": "^6.0.1",

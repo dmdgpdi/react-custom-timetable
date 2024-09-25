@@ -2956,7 +2956,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.10.0, eslint@npm:^9.9.0":
+"eslint@npm:9.10.0, eslint@npm:^9.10.0, eslint@npm:^9.9.0":
   version: 9.10.0
   resolution: "eslint@npm:9.10.0"
   dependencies:
@@ -5430,6 +5430,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "react-custom-timetable@workspace:library"
   dependencies:
+    "@eslint/js": "npm:9.10.0"
     "@floating-ui/react": "npm:^0.26.22"
     "@jest/globals": "npm:^29.7.0"
     "@rollup/plugin-inject": "npm:^5.0.5"
@@ -5442,6 +5443,7 @@ __metadata:
     esbuild: "npm:^0.24.0"
     esbuild-plugin-inline-image: "npm:^0.0.9"
     esbuild-sass-plugin: "npm:^3.3.1"
+    eslint: "npm:9.10.0"
     randomcolor: "npm:^0.6.2"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
