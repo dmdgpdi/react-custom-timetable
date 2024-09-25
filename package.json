@@ -4,14 +4,14 @@
   "license": "MIT",
   "scripts": {
     "lib": "yarn workspace react-custom-timetable",
-    "doc": "yarn workspace officialdoc",
+    "docs": "yarn workspace docs",
     "demo": "yarn workspace demo",
     "all": "yarn workspaces foreach --all"
   },
   "workspaces": {
     "packages": [
       "library",
-      "officialdoc",
+      "docs",
       "demo"
     ]
   },
