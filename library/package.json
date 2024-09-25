@@ -28,13 +28,11 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
     "build": "yarn clean && yarn build:tsc && yarn build:js",
     "build:tsc": "yarn tsc",
     "build:js": "node esbuild.config.js",
     "clean": "rimraf -rf dist",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "lint": "eslint ."
   },
   "dependencies": {
     "@floating-ui/react": "^0.26.22",
