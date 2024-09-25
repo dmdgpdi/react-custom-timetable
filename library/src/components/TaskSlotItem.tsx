@@ -64,7 +64,6 @@ function TaskSlotItem<T extends BaseTask>({
       ? { top: '0', left: `${startPercent}%`, width: `${endPercent}%` }
       : { top: `${startPercent}%`, left: '0', height: `${endPercent}%` };
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     if (type === 'ROW') {
       if (taskSlotRef.current) {

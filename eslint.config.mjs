@@ -4,12 +4,20 @@ import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
 
 export default [
-  { files: ['**/*.{ts,tsx}'], ignores: ['**/dist/**'], // dist 폴더와 테스트 파일 제외 },
+  {
+    ignores: ['**/dist/*'],
+  },
+  { files: ['**/*.{ts,tsx}'] },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   {
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
     rules: {
       'react/react-in-jsx-scope': 'off', // Disable the rule globally
       'no-require-imports': 'off',
