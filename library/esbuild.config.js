@@ -1,7 +1,9 @@
 /* eslint-disable no-undef */
-import esbuild from 'esbuild';
+import { context } from 'esbuild';
 import { sassPlugin } from 'esbuild-sass-plugin';
 import inlineImage from 'esbuild-plugin-inline-image';
+
+const watch = process.argv.includes('--watch');
 
 const baseConfig = {
   entryPoints: ['src/index.ts'],
@@ -21,20 +23,21 @@ const baseConfig = {
 };
 
 Promise.all([
-  esbuild.build({
+  context({
     ...baseConfig,
     format: 'cjs',
     outExtension: {
       '.js': '.cjs',
     },
-    loader: {
-      '.png': 'file',
-    },
-  }),
-  esbuild.build({
+  }).then((ctx) =>
+    watch ? ctx.watch() : ctx.rebuild().then(() => ctx.dispose()),
+  ),
+  context({
     ...baseConfig,
     format: 'esm',
-  }),
+  }).then((ctx) =>
+    watch ? ctx.watch() : ctx.rebuild().then(() => ctx.dispose()),
+  ),
 ]).catch((error) => {
   console.log('Build fail');
   console.log('error', error);
