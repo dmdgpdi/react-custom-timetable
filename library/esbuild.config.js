@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-
 import esbuild from 'esbuild';
 import { sassPlugin } from 'esbuild-sass-plugin';
+import inlineImage from 'esbuild-plugin-inline-image';
 
 const baseConfig = {
   entryPoints: ['src/index.ts'],
@@ -12,10 +12,8 @@ const baseConfig = {
     sassPlugin({
       type: 'local-css',
     }),
+    inlineImage(),
   ],
-  loader: {
-    '.png': 'file',
-  },
   banner: {
     js: '"use client";\nimport "./index.css";\n',
   },
@@ -29,8 +27,10 @@ Promise.all([
     outExtension: {
       '.js': '.cjs',
     },
+    loader: {
+      '.png': 'file',
+    },
   }),
-
   esbuild.build({
     ...baseConfig,
     format: 'esm',

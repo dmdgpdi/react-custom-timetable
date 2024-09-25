@@ -1394,16 +1394,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:^29.5.12":
-  version: 29.5.12
-  resolution: "@types/jest@npm:29.5.12"
-  dependencies:
-    expect: "npm:^29.0.0"
-    pretty-format: "npm:^29.0.0"
-  checksum: 10c0/25fc8e4c611fa6c4421e631432e9f0a6865a8cb07c9815ec9ac90d630271cad773b2ee5fe08066f7b95bebd18bb967f8ce05d018ee9ab0430f9dfd1d84665b6f
-  languageName: node
-  linkType: hard
-
 "@types/node@npm:*, @types/node@npm:^22.5.4":
   version: 22.5.4
   resolution: "@types/node@npm:22.5.4"
@@ -2621,6 +2611,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esbuild-plugin-inline-image@npm:^0.0.9":
+  version: 0.0.9
+  resolution: "esbuild-plugin-inline-image@npm:0.0.9"
+  checksum: 10c0/05f012bfb94ed2aaf6b08f2885d165420359f34c674d4f0b3a26241c3923c0808651d8ec2cfaffe07c638556c511bbec147d1b2c18b9c06dc58a5f92dc7077db
+  languageName: node
+  linkType: hard
+
 "esbuild-sass-plugin@npm:^3.3.1":
   version: 3.3.1
   resolution: "esbuild-sass-plugin@npm:3.3.1"
@@ -3040,7 +3037,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"expect@npm:^29.0.0, expect@npm:^29.7.0":
+"expect@npm:^29.7.0":
   version: 29.7.0
   resolution: "expect@npm:29.7.0"
   dependencies:
@@ -5303,7 +5300,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:^29.0.0, pretty-format@npm:^29.7.0":
+"pretty-format@npm:^29.7.0":
   version: 29.7.0
   resolution: "pretty-format@npm:29.7.0"
   dependencies:
@@ -5375,7 +5372,6 @@ __metadata:
   resolution: "react-custom-timetable-monorepo@workspace:."
   dependencies:
     "@eslint/js": "npm:^9.10.0"
-    "@types/jest": "npm:^29.5.12"
     "@types/node": "npm:^22.5.4"
     "@types/react": "npm:^18.3.5"
     eslint: "npm:^9.10.0"
@@ -5400,6 +5396,7 @@ __metadata:
     "@types/react-dom": "npm:^18.3.0"
     date-fns: "npm:^3.6.0"
     esbuild: "npm:^0.24.0"
+    esbuild-plugin-inline-image: "npm:^0.0.9"
     esbuild-sass-plugin: "npm:^3.3.1"
     randomcolor: "npm:^0.6.2"
     react: "npm:^18.3.1"
