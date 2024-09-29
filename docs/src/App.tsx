@@ -3,7 +3,6 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 
-// TODO: jest 적용
 // TODO: yarn berry 설정 변경. (pnp지만 zero install은 아님.)
 
 function App() {
