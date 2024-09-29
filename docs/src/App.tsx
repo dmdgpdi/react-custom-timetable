@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg';
 import './App.css';
 
 // TODO: jest 적용
-// TODO: esbuild로 교체
+// TODO: yarn berry 설정 변경. (pnp지만 zero install은 아님.)
 
 function App() {
   const [count, setCount] = useState(0);
