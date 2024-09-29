@@ -1,0 +1,77 @@
+{
+  "name": "react-custom-timetable",
+  "description": "custom timetable for react",
+  "version": "0.0.10",
+  "keywords": [
+    "timetable",
+    "scheduler"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmdgpdi/react-custom-timetable.git"
+  },
+  "contributors": [
+    "dmdgpdi",
+    "haejinyun"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "yarn clean && yarn build:tsc && yarn build:js",
+    "build:tsc": "yarn tsc",
+    "build:js": "node esbuild.config.js",
+    "build:tsc:watch": "yarn tsc --watch",
+    "build:js:watch": "node esbuild.config.js --watch",
+    "build:watch": "concurrently \"yarn build:tsc:watch\" \"yarn build:js:watch --watch\"",
+    "clean": "rimraf -rf dist",
+    "lint": "eslint '.'",
+    "test": "yarn jest"
+  },
+  "dependencies": {
+    "@floating-ui/react": "^0.26.22",
+    "date-fns": "^3.6.0",
+    "randomcolor": "^0.6.2"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.10.0",
+    "@jest/globals": "^29.7.0",
+    "@types/date-fns": "^2.6.0",
+    "@types/node": "^22.7.4",
+    "@types/randomcolor": "^0.5.9",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "concurrently": "^9.0.1",
+    "esbuild": "^0.24.0",
+    "esbuild-plugin-inline-image": "^0.0.9",
+    "esbuild-sass-plugin": "^3.3.1",
+    "eslint": "8.57.1",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rimraf": "^6.0.1",
+    "sass": "^1.77.8",
+    "sass-embedded": "^1.79.4",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "license": "MIT",
+  "packageManager": "yarn@4.4.1"
+}
