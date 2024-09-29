@@ -2032,56 +2032,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["@rollup/plugin-inject", [\
-      ["npm:5.0.5", {\
-        "packageLocation": "../../../.yarn/berry/cache/@rollup-plugin-inject-npm-5.0.5-06525e4573-10c0.zip/node_modules/@rollup/plugin-inject/",\
-        "packageDependencies": [\
-          ["@rollup/plugin-inject", "npm:5.0.5"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["virtual:053cdfb86527469bed0d0621efa39054161e6cbbe3caf659ed330f2585cf57073ef733a21d51e24871e123f44205c26b4b90ba7121582f69575c28ce6504c72a#npm:5.0.5", {\
-        "packageLocation": "./.yarn/__virtual__/@rollup-plugin-inject-virtual-2119a8e695/4/.yarn/berry/cache/@rollup-plugin-inject-npm-5.0.5-06525e4573-10c0.zip/node_modules/@rollup/plugin-inject/",\
-        "packageDependencies": [\
-          ["@rollup/plugin-inject", "virtual:053cdfb86527469bed0d0621efa39054161e6cbbe3caf659ed330f2585cf57073ef733a21d51e24871e123f44205c26b4b90ba7121582f69575c28ce6504c72a#npm:5.0.5"],\
-          ["@rollup/pluginutils", "virtual:2119a8e69570923fd23b55bef82d4113269d61e58bfbdd65abdea4cc0282d0e874ae988c1d015553bbb1bfb662136ff2da2d62781ee028c6bf47be0ce6c3826a#npm:5.1.0"],\
-          ["@types/rollup", null],\
-          ["estree-walker", "npm:2.0.2"],\
-          ["magic-string", "npm:0.30.11"],\
-          ["rollup", null]\
-        ],\
-        "packagePeers": [\
-          "@types/rollup",\
-          "rollup"\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["@rollup/pluginutils", [\
-      ["npm:5.1.0", {\
-        "packageLocation": "../../../.yarn/berry/cache/@rollup-pluginutils-npm-5.1.0-6939820ef8-10c0.zip/node_modules/@rollup/pluginutils/",\
-        "packageDependencies": [\
-          ["@rollup/pluginutils", "npm:5.1.0"]\
-        ],\
-        "linkType": "SOFT"\
-      }],\
-      ["virtual:2119a8e69570923fd23b55bef82d4113269d61e58bfbdd65abdea4cc0282d0e874ae988c1d015553bbb1bfb662136ff2da2d62781ee028c6bf47be0ce6c3826a#npm:5.1.0", {\
-        "packageLocation": "./.yarn/__virtual__/@rollup-pluginutils-virtual-d9bc2434b2/4/.yarn/berry/cache/@rollup-pluginutils-npm-5.1.0-6939820ef8-10c0.zip/node_modules/@rollup/pluginutils/",\
-        "packageDependencies": [\
-          ["@rollup/pluginutils", "virtual:2119a8e69570923fd23b55bef82d4113269d61e58bfbdd65abdea4cc0282d0e874ae988c1d015553bbb1bfb662136ff2da2d62781ee028c6bf47be0ce6c3826a#npm:5.1.0"],\
-          ["@types/estree", "npm:1.0.5"],\
-          ["@types/rollup", null],\
-          ["estree-walker", "npm:2.0.2"],\
-          ["picomatch", "npm:2.3.1"],\
-          ["rollup", null]\
-        ],\
-        "packagePeers": [\
-          "@types/rollup",\
-          "rollup"\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["@rollup/rollup-android-arm-eabi", [\
       ["npm:4.21.2", {\
         "packageLocation": "./.yarn/unplugged/@rollup-rollup-android-arm-eabi-npm-4.21.2-a0e407ee56/node_modules/@rollup/rollup-android-arm-eabi/",\
@@ -4640,15 +4590,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["estree-walker", [\
-      ["npm:2.0.2", {\
-        "packageLocation": "../../../.yarn/berry/cache/estree-walker-npm-2.0.2-dfab42f65c-10c0.zip/node_modules/estree-walker/",\
-        "packageDependencies": [\
-          ["estree-walker", "npm:2.0.2"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["esutils", [\
       ["npm:2.0.3", {\
         "packageLocation": "../../../.yarn/berry/cache/esutils-npm-2.0.3-f865beafd5-10c0.zip/node_modules/esutils/",\
@@ -6685,16 +6626,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["magic-string", [\
-      ["npm:0.30.11", {\
-        "packageLocation": "../../../.yarn/berry/cache/magic-string-npm-0.30.11-4e76dc2f30-10c0.zip/node_modules/magic-string/",\
-        "packageDependencies": [\
-          ["magic-string", "npm:0.30.11"],\
-          ["@jridgewell/sourcemap-codec", "npm:1.5.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["make-dir", [\
       ["npm:4.0.0", {\
         "packageLocation": "../../../.yarn/berry/cache/make-dir-npm-4.0.0-ec3cd921cc-10c0.zip/node_modules/make-dir/",\
@@ -7512,7 +7443,6 @@ const RAW_RUNTIME_STATE =
           ["@eslint/js", "npm:9.10.0"],\
           ["@floating-ui/react", "virtual:053cdfb86527469bed0d0621efa39054161e6cbbe3caf659ed330f2585cf57073ef733a21d51e24871e123f44205c26b4b90ba7121582f69575c28ce6504c72a#npm:0.26.23"],\
           ["@jest/globals", "npm:29.7.0"],\
-          ["@rollup/plugin-inject", "virtual:053cdfb86527469bed0d0621efa39054161e6cbbe3caf659ed330f2585cf57073ef733a21d51e24871e123f44205c26b4b90ba7121582f69575c28ce6504c72a#npm:5.0.5"],\
           ["@types/date-fns", "npm:2.6.0"],\
           ["@types/node", "npm:22.7.4"],\
           ["@types/randomcolor", "npm:0.5.9"],\
@@ -7552,7 +7482,6 @@ const RAW_RUNTIME_STATE =
           ["@eslint/js", "npm:9.10.0"],\
           ["@floating-ui/react", "virtual:61fb6211059a5041bdf077c4f30db536b5be197fd849ff37f3f6e130f91c5139cde1989f84d3d0c3517fa63e182c68e954bb852086f81ee6fa3faf06999696c7#npm:0.26.23"],\
           ["@jest/globals", "npm:29.7.0"],\
-          ["@rollup/plugin-inject", "virtual:053cdfb86527469bed0d0621efa39054161e6cbbe3caf659ed330f2585cf57073ef733a21d51e24871e123f44205c26b4b90ba7121582f69575c28ce6504c72a#npm:5.0.5"],\
           ["@types/date-fns", "npm:2.6.0"],\
           ["@types/node", "npm:22.7.4"],\
           ["@types/randomcolor", "npm:0.5.9"],\
