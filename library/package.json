@@ -52,6 +52,7 @@
     "@jest/globals": "^29.7.0",
     "@rollup/plugin-inject": "^5.0.5",
     "@types/date-fns": "^2.6.0",
+    "@types/node": "^22.7.4",
     "@types/randomcolor": "^0.5.9",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
@@ -66,14 +67,11 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rimraf": "^6.0.1",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-postprocess": "^1.0.2",
-    "rollup-plugin-scss": "^3.0.0",
     "sass": "^1.77.8",
+    "sass-embedded": "^1.79.4",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.4",
-    "yarn": "^1.22.22"
+    "typescript": "^5.5.4"
   },
   "license": "MIT",
   "packageManager": "yarn@4.4.1"
