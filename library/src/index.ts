@@ -6,3 +6,5 @@ export {
   calculateTargetPosition,
   getTodayFromTime,
 } from './utils';
+
+export { useTimeTable } from './hooks/useTimeTable';

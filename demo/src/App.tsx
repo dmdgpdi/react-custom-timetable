@@ -1,4 +1,4 @@
-import TimeTable from 'react-custom-timetable';
+import TimeTable, { useTimeTable } from 'react-custom-timetable';
 
 import {
   startTime,
@@ -8,8 +8,18 @@ import {
 } from './mocks/timetableMockData';
 
 function App() {
+  const { taskListWithRef, timeTableRef } = useTimeTable({
+    taskList: taskListWithouttaskColor,
+  });
+
   return (
     <>
+      <div
+        id="testTimeTableLayout"
+        style={{ height: '500px', backgroundColor: 'green' }}
+        ref={timeTableRef}
+      ></div>
+
       <div style={{ height: '500px' }}>
         <TimeTable
           totalStartTime={startTime}
