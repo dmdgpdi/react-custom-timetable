@@ -1,11 +1,6 @@
-import TimeTable, { useTimeTable } from 'react-custom-timetable';
+import { useTimeTable } from 'react-custom-timetable';
 
-import {
-  startTime,
-  endTime,
-  slotTime,
-  taskListWithouttaskColor,
-} from './mocks/timetableMockData';
+import { taskListWithouttaskColor } from './mocks/timetableMockData';
 
 function App() {
   const { taskListWithRef, timeTableRef } = useTimeTable({
@@ -16,48 +11,30 @@ function App() {
     <>
       <div
         id="testTimeTableLayout"
-        style={{ height: '500px', backgroundColor: 'green' }}
+        style={{
+          height: '500px',
+
+          border: '1px solid black',
+          boxSizing: 'border-box',
+        }}
         ref={timeTableRef}
-      ></div>
-
-      <div style={{ height: '500px' }}>
-        <TimeTable
-          totalStartTime={startTime}
-          totalEndTime={endTime}
-          slotRange={slotTime}
-          taskList={taskListWithouttaskColor}
-          timeTableSize="2000px"
-          timetableDirection="COLUMN"
-          displayCurrentTime
-          timeTableStyle={{ backgroundColor: 'white' }}
-          timeSlotStyle={{ color: 'black', fontSize: '20px' }}
-          taskSlotStyle={{
-            color: 'white',
-            textShadow: '1px 1px 1px gray',
-            fontSize: '32px',
-          }}
-          ellipsisText=""
-        />
-      </div>
-
-      <div style={{ height: '500px' }}>
-        <TimeTable
-          totalStartTime={startTime}
-          totalEndTime={endTime}
-          slotRange={slotTime}
-          taskList={taskListWithouttaskColor}
-          timeTableSize="2000px"
-          timetableDirection="ROW"
-          displayCurrentTime
-          timeTableStyle={{ backgroundColor: 'white' }}
-          timeSlotStyle={{ color: 'black' }}
-          taskSlotStyle={{
-            color: 'black',
-            textShadow: '1px 1px 1px gray',
-            fontSize: '32px',
-          }}
-          ellipsisText="..."
-        />
+      >
+        {taskListWithRef.map((task) => {
+          return (
+            <div key={task.id} ref={task.ref} style={task.style}>
+              <p>
+                {task.title}{' '}
+                <span>
+                  {task.startTime.getHours()}:{task.startTime.getMinutes()}
+                </span>
+                {'~'}
+                <span>
+                  {task.endTime.getHours()}:{task.endTime.getMinutes()}
+                </span>
+              </p>
+            </div>
+          );
+        })}
       </div>
     </>
   );

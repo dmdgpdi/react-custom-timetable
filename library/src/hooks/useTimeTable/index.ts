@@ -2,18 +2,54 @@ import { useEffect, useRef } from 'react';
 import { BaseTask } from '../../components/Timetable.type';
 import { calculateTargetPosition } from '../../utils';
 
-const getTaskListWithRef = <T extends BaseTask>(taskList: T[]) => {
-  const taskListWithRef: taskWithRef<T>[] = taskList.map((task) => ({
-    ...task,
-    ref: (node: HTMLElement | null) => {
-      if (!node) {
-        return;
-      }
+const setTaskSizeStyle = <T extends BaseTask>(
+  task: T,
+  startTime: Date,
+  endTime: Date,
+) => {
+  // 각 size를 구해서 offset으로 구하기.
+  const { startPercent, endPercent } = calculateTargetPosition(
+    startTime,
+    endTime,
+    task.startTime!,
+    task.endTime!,
+  );
 
-      console.log('task ref', node);
-    },
-    style: { backgroundColor: 'orange' } as React.CSSProperties,
-  }));
+  const taskStyle: React.CSSProperties = {
+    top: `${startPercent}%`,
+    height: `${endPercent}%`,
+  };
+
+  return taskStyle;
+};
+
+const getTaskListWithRef = <T extends BaseTask>(
+  taskList: T[],
+  startTime: Date,
+  endTime: Date,
+) => {
+  const taskListWithRef: taskWithRef<T>[] = taskList.map((task) => {
+    const taskSizeStyle = setTaskSizeStyle(task, startTime, endTime);
+
+    return {
+      ...task,
+      ref: (node: HTMLElement | null) => {
+        if (!node) {
+          return;
+        }
+
+        console.log(
+          `task ref ${task.title} getBoundingClientRect`,
+          node.getBoundingClientRect(),
+        );
+      },
+
+      style: {
+        backgroundColor: 'orange',
+        ...taskSizeStyle,
+      } as React.CSSProperties,
+    };
+  });
 
   return taskListWithRef;
 };
@@ -25,24 +61,7 @@ export function useTimeTable<T extends BaseTask>({
 }: UseTimeTableOption<T>): UseTimeTableReturn<T> {
   const timeTableRef = useRef<HTMLElement | null>(null);
   const timeTableStyle = useRef<React.CSSProperties>({});
-  const taskListWithRef = getTaskListWithRef(taskList);
-
-  const setTaskSize = (task: T) => {
-    // 각 size를 구해서 offset으로 구하기.
-    const { startPercent, endPercent } = calculateTargetPosition(
-      startTime,
-      endTime,
-      task.startTime!,
-      task.endTime!,
-    );
-
-    const taskStyle: React.CSSProperties = {
-      top: `${startPercent}%`,
-      height: `${endPercent}%`,
-    };
-
-    return taskStyle;
-  };
+  const taskListWithRef = getTaskListWithRef(taskList, startTime, endTime);
 
   useEffect(() => {
     // Todo
@@ -59,9 +78,8 @@ export function useTimeTable<T extends BaseTask>({
       timeTableRef.current = node;
       timeTableStyle.current = { position: 'relative' };
 
-      console.log('timeTableRef', timeTableRef.current);
       console.log(
-        'getBoundingClientRect',
+        'timeTableRef getBoundingClientRect',
         timeTableRef.current.getBoundingClientRect(),
       );
     },
