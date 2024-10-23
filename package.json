@@ -6,7 +6,8 @@
     "lib": "yarn workspace react-custom-timetable",
     "docs": "yarn workspace docs",
     "demo": "yarn workspace demo",
-    "all": "yarn workspaces foreach --all"
+    "all": "yarn workspaces foreach --all",
+    "dev": "yarn lib build:watch & yarn demo dev"
   },
   "workspaces": {
     "packages": [
