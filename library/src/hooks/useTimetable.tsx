@@ -99,6 +99,10 @@ function groupByOverlappingTimesRange<T extends BaseTask>(
     }
 
     const lastTaskInGroup = currentGroup[currentGroup.length - 1];
+    //[TODO]
+    // 그룹핑 요소에서 Start, End를 확장시키는 로직이 필요함.
+    // const startTaskInGroup = currentGroup[currentGroup.length - 1];
+    // const lastTaskInGroup = currentGroup[currentGroup.length - 1];
 
     // 현재 요소가 그룹의 마지막 요소와 겹치는지 확인
     if (task.startTime < lastTaskInGroup.endTime) {
@@ -162,12 +166,18 @@ function useTimeTable<T extends BaseTask>({
     startTime,
     endTime,
   );
-
+  console.log(
+    'taskListWithAutoVerticalPosition',
+    taskListWithAutoVerticalPosition,
+  );
   const groupedTaskList = groupByOverlappingTimesRange(
     taskListWithAutoVerticalPosition,
   );
+  console.log('groupedTaskList', groupedTaskList);
+
   const taskListAutoPosition =
     setTaskListWithAutoHorizonPosition(groupedTaskList);
+  console.log('taskListAutoPosition', taskListAutoPosition);
 
   useEffect(() => {
     // Todo
