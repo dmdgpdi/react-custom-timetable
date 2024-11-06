@@ -1,6 +1,8 @@
-import Timetable from './components';
+// import Timetable from './components';
 
-export default Timetable;
+import useTimeTable from './hooks/useTimetable';
+
+export default useTimeTable;
 export {
   checkTaskListOverlap,
   calculateTargetPosition,

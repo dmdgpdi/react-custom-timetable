@@ -1,55 +1,36 @@
-import TimeTable from 'react-custom-timetable';
-
-import {
-  startTime,
-  endTime,
-  slotTime,
-  taskListWithouttaskColor,
-} from './mocks/timetableMockData';
+import { taskListOverlapVersion } from './mocks/timetableMockData';
+import useTimeTable from 'react-custom-timetable';
 
 function App() {
-  return (
-    <>
-      <div style={{ height: '500px' }}>
-        <TimeTable
-          totalStartTime={startTime}
-          totalEndTime={endTime}
-          slotRange={slotTime}
-          taskList={taskListWithouttaskColor}
-          timeTableSize="2000px"
-          timetableDirection="COLUMN"
-          displayCurrentTime
-          timeTableStyle={{ backgroundColor: 'white' }}
-          timeSlotStyle={{ color: 'black', fontSize: '20px' }}
-          taskSlotStyle={{
-            color: 'white',
-            textShadow: '1px 1px 1px gray',
-            fontSize: '32px',
-          }}
-          ellipsisText=""
-        />
-      </div>
+  const { taskListAutoPosition, timeTableCallbackRef } = useTimeTable({
+    taskList: taskListOverlapVersion,
+  });
 
-      <div style={{ height: '500px' }}>
-        <TimeTable
-          totalStartTime={startTime}
-          totalEndTime={endTime}
-          slotRange={slotTime}
-          taskList={taskListWithouttaskColor}
-          timeTableSize="2000px"
-          timetableDirection="ROW"
-          displayCurrentTime
-          timeTableStyle={{ backgroundColor: 'white' }}
-          timeSlotStyle={{ color: 'black' }}
-          taskSlotStyle={{
-            color: 'black',
-            textShadow: '1px 1px 1px gray',
-            fontSize: '32px',
+  return (
+    <div
+      id="testTimeTableLayout"
+      style={{
+        height: '500px',
+        border: '1px solid black',
+        boxSizing: 'border-box',
+        position: 'relative',
+        overflow: 'scroll',
+      }}
+      ref={timeTableCallbackRef}
+    >
+      {taskListAutoPosition.map((task, index) => (
+        <div
+          key={index}
+          style={{
+            ...task.style,
+            display: 'flex',
+            flexDirection: 'column',
           }}
-          ellipsisText="..."
-        />
-      </div>
-    </>
+        >
+          {task.title}
+        </div>
+      ))}
+    </div>
   );
 }
 
