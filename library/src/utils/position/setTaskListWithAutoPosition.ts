@@ -1,21 +1,25 @@
 import type { BaseTask } from '../../types/baseTask';
 import type { ReturnTaskType } from '../../types/taskReturnType';
-import setTaskVerticalSizeStyle from './setTaskVerticalSizeStyle';
+import getTaskVerticalSizeStyle from './getTaskVerticalSizeStyle';
 
 export default function setTaskListWithAutoPosition<T extends BaseTask>({
   groupedTaskList,
   startTime,
   endTime,
-}: setTaskListWithAutoHorizonPositionParameter<T>): ReturnTaskType<T>[][] {
-  const groupedTaskListWithHorizonPosition = groupedTaskList.map((group) => {
+}: setTaskListWithAutoPositionParameter<T>): ReturnTaskType<T>[][] {
+  const groupedTaskListWithAutoPosition = groupedTaskList.map((group) => {
     const autoPositionedGroup = group.map((task, index) => {
-      const taskSizeStyle = setTaskVerticalSizeStyle(task, startTime, endTime);
+      const taskVerticalStyle = getTaskVerticalSizeStyle(
+        task,
+        startTime,
+        endTime,
+      );
 
       const taskStyle = {
         position: 'absolute',
         left: `${(100 / group.length) * index}%`,
         width: `${100 / group.length}%`,
-        ...taskSizeStyle,
+        ...taskVerticalStyle,
       } as React.CSSProperties;
 
       return {
@@ -27,10 +31,10 @@ export default function setTaskListWithAutoPosition<T extends BaseTask>({
     return autoPositionedGroup;
   });
 
-  return groupedTaskListWithHorizonPosition;
+  return groupedTaskListWithAutoPosition;
 }
 
-interface setTaskListWithAutoHorizonPositionParameter<T extends BaseTask> {
+interface setTaskListWithAutoPositionParameter<T extends BaseTask> {
   groupedTaskList: T[][];
   startTime: Date;
   endTime: Date;

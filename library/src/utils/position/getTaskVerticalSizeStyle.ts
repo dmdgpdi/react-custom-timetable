@@ -1,7 +1,7 @@
 import { BaseTask } from '../../types/baseTask';
 import { calculateTargetPosition } from '../date/calculation';
 
-function setTaskVerticalSizeStyle<T extends BaseTask>(
+export default function getTaskVerticalSizeStyle<T extends BaseTask>(
   task: T,
   startTime: Date,
   endTime: Date,
@@ -20,5 +20,3 @@ function setTaskVerticalSizeStyle<T extends BaseTask>(
 
   return taskStyle;
 }
-
-export default setTaskVerticalSizeStyle;
