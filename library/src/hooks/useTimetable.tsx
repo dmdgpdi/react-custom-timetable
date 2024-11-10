@@ -5,7 +5,6 @@ import { BaseTask } from '../types/baseTask';
 
 import setTaskListWithAutoPosition from '../utils/position/setTaskListWithAutoPosition';
 import groupByOverlappingTimesRange from '../utils/position/groupByOverlappingTimesRange';
-import type { ReturnTaskType } from '../types/taskReturnType';
 
 type UseTimeTableOption<T extends BaseTask> = {
   taskList: T[];
