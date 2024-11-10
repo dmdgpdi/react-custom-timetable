@@ -38,13 +38,9 @@ function useTimeTable<T extends BaseTask>({
   });
 
   // 일차원배열로 만들기.
-  const taskListWithAutoPosition: ReturnTaskType<T>[] = [];
-
-  groupedTaskListWithAutoPosition.forEach((group) => {
-    group.forEach((task) => {
-      taskListWithAutoPosition.push(task);
-    });
-  });
+  const taskListWithAutoPosition = groupedTaskListWithAutoPosition.flatMap(
+    (group) => group,
+  );
 
   const timeTableCallbackRef = useCallback((node: HTMLDivElement) => {
     if (node) {
