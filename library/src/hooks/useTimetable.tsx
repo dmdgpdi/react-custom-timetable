@@ -33,6 +33,8 @@ function useTimeTable<T extends BaseTask>({
     taskListWithAutoVerticalPosition,
   );
 
+  // console.log('groupedTaskList', groupedTaskList);
+
   const taskListAutoPosition =
     setTaskListWithAutoHorizonPosition(groupedTaskList);
 

@@ -1,12 +1,12 @@
 import { BaseTask } from '../../types/baseTask';
 
 function groupByOverlappingTimesRange<T extends BaseTask>(
-  test: (T & {
+  tasks: (T & {
     ref: (node: HTMLElement | null) => void;
     style: React.CSSProperties;
   })[],
 ) {
-  const sortedTasks = [...test].sort(
+  const sortedTasks = tasks.sort(
     (a, b) => a.startTime.getTime() - b.startTime.getTime(),
   );
 
@@ -16,27 +16,36 @@ function groupByOverlappingTimesRange<T extends BaseTask>(
     style: React.CSSProperties;
   })[][] = [];
 
-  let currentGroup: typeof test = [];
+  let currentGroup: typeof tasks = [];
+
+  let groupStartTime: number = Number.MAX_SAFE_INTEGER;
+  let groupEndTime: number = Number.MAX_SAFE_INTEGER;
 
   sortedTasks.forEach((task) => {
-    if (currentGroup.length === 0) {
+    const taskStartTime = task.startTime.getTime();
+    const taskEndTime = task.endTime.getTime();
+
+    // 1. groupEndTime보다 taskStartTime이 작고, taskEndTime이 groupEndTime보다 길 경우.
+    if (taskStartTime <= groupEndTime && groupEndTime <= taskEndTime) {
       currentGroup.push(task);
+      groupEndTime = taskEndTime;
       return;
     }
-
-    const lastTaskInGroup = currentGroup[currentGroup.length - 1];
-    //[TODO]
-    // 그룹핑 요소에서 Start, End를 확장시키는 로직이 필요함.
-    // const startTaskInGroup = currentGroup[currentGroup.length - 1];
-    // const lastTaskInGroup = currentGroup[currentGroup.length - 1];
-
-    // 현재 요소가 그룹의 마지막 요소와 겹치는지 확인
-    if (task.startTime < lastTaskInGroup.endTime) {
+    // 2. groupStartTime보다 taskStartTime이 크고 groupEndTime보다 taskEndTime이 작을 경우.
+    else if (groupStartTime <= taskStartTime && taskEndTime <= groupEndTime) {
       currentGroup.push(task);
+      return;
     } else {
-      // 겹치지 않으면 현재 그룹을 추가하고 새로운 그룹을 시작
-      groupedTasks.push(currentGroup);
+      // 3. 겹치지 않으면 현재 그룹을 추가하고 새로운 그룹을 시작
+      if (currentGroup.length !== 0) {
+        groupedTasks.push(currentGroup);
+      }
+
       currentGroup = [task];
+      groupStartTime = task.startTime.getTime();
+      groupEndTime = task.endTime.getTime();
+
+      return;
     }
   });
 
