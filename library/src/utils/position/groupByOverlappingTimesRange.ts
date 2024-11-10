@@ -1,10 +1,8 @@
 import { BaseTask } from '../../types/baseTask';
+import type { ReturnTaskType } from '../../types/taskReturnType';
 
 function groupByOverlappingTimesRange<T extends BaseTask>(
-  tasks: (T & {
-    ref: (node: HTMLElement | null) => void;
-    style: React.CSSProperties;
-  })[],
+  tasks: ReturnTaskType<T>[],
 ) {
   const sortedTasks = tasks.sort(
     (a, b) => a.startTime.getTime() - b.startTime.getTime(),

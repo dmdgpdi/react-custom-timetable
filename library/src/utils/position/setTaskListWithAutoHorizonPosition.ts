@@ -1,15 +1,10 @@
-import { BaseTask } from '../../types/baseTask';
+import type { BaseTask } from '../../types/baseTask';
+import type { ReturnTaskType } from '../../types/taskReturnType';
 
 function setTaskListWithAutoHorizonPosition<T extends BaseTask>(
-  test: (T & {
-    ref: (node: HTMLElement | null) => void;
-    style: React.CSSProperties;
-  })[][],
+  test: ReturnTaskType<T>[][],
 ) {
-  const finalTemp: (T & {
-    ref: (node: HTMLElement | null) => void;
-    style: React.CSSProperties;
-  })[] = [];
+  const finalTemp: ReturnTaskType<T>[] = [];
 
   test.forEach((group) => {
     const autoPositionedGroup = group.map((task, index) => {
