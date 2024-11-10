@@ -2,7 +2,7 @@ import { taskListOverlapVersion } from './mocks/timetableMockData';
 import useTimeTable from 'react-custom-timetable';
 
 function App() {
-  const { taskListAutoPosition, timeTableCallbackRef } = useTimeTable({
+  const { taskListWithAutoPosition, timeTableCallbackRef } = useTimeTable({
     taskList: taskListOverlapVersion,
   });
 
@@ -18,13 +18,13 @@ function App() {
       }}
       ref={timeTableCallbackRef}
     >
-      {taskListAutoPosition.map((task, index) => (
+      {taskListWithAutoPosition.map((task, index) => (
         <div
           key={index}
           style={{
             ...task.style,
-            display: 'flex',
-            flexDirection: 'column',
+
+            backgroundColor: 'orange',
           }}
         >
           {task.title}
