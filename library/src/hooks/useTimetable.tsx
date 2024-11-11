@@ -2,10 +2,10 @@
 
 import { useCallback, useRef } from 'react';
 import { BaseTask } from '../types/baseTask';
+import { getSortedTaskList, convertToFlatTaskList } from '../utils';
 
-import setTaskListWithAutoVerticalPosition from '../utils/position/setTaskListWithAutoVerticalPosition';
-import setTaskListWithAutoHorizonPosition from '../utils/position/setTaskListWithAutoHorizonPosition';
-import groupByOverlappingTimesRange from '../utils/position/groupByOverlappingTimesRange';
+import getGroupedTaskListWithAutoPosition from '../utils/position/getGroupedTaskListWithAutoPosition';
+import groupByOverlappingTimeRange from '../utils/position/groupByOverlappingTimesRange';
 
 type UseTimeTableOption<T extends BaseTask> = {
   taskList: T[];
@@ -23,18 +23,22 @@ function useTimeTable<T extends BaseTask>({
 }: UseTimeTableOption<T>) {
   const timeTableRef = useRef<HTMLDivElement | null>(null);
 
-  const taskListWithAutoVerticalPosition = setTaskListWithAutoVerticalPosition(
-    taskList,
+  // sorting
+  const sortedTaskList = getSortedTaskList(taskList);
+  // 그룹 묶기.
+  const groupedTaskList = groupByOverlappingTimeRange(sortedTaskList);
+
+  // horizon, vertical position 부여하기
+  const groupedTaskListWithAutoPosition = getGroupedTaskListWithAutoPosition({
+    groupedTaskList,
     startTime,
     endTime,
-  );
+  });
 
-  const groupedTaskList = groupByOverlappingTimesRange(
-    taskListWithAutoVerticalPosition,
+  // 일차원배열로 만들기.
+  const taskListWithAutoPosition = convertToFlatTaskList(
+    groupedTaskListWithAutoPosition,
   );
-
-  const taskListAutoPosition =
-    setTaskListWithAutoHorizonPosition(groupedTaskList);
 
   const timeTableCallbackRef = useCallback((node: HTMLDivElement) => {
     if (node) {
@@ -44,9 +48,7 @@ function useTimeTable<T extends BaseTask>({
 
   return {
     timeTableCallbackRef,
-    setTaskListWithAutoVerticalPosition,
-    groupedTaskList,
-    taskListAutoPosition,
+    taskListWithAutoPosition,
   };
 }
 
