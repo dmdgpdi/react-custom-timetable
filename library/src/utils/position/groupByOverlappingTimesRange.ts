@@ -1,6 +1,8 @@
 import { BaseTask } from '../../types/baseTask';
 
-function groupByOverlappingTimesRange<T extends BaseTask>(sortedTaskList: T[]) {
+export default function groupByOverlappingTimeRange<T extends BaseTask>(
+  sortedTaskList: T[],
+) {
   const groupedTasks: T[][] = [];
   let currentGroup: T[] = [];
   let groupStartTime: number = Number.MAX_SAFE_INTEGER;
@@ -42,5 +44,3 @@ function groupByOverlappingTimesRange<T extends BaseTask>(sortedTaskList: T[]) {
 
   return groupedTasks;
 }
-
-export default groupByOverlappingTimesRange;
