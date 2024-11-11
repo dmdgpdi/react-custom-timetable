@@ -2,7 +2,7 @@
 
 import { useCallback, useRef } from 'react';
 import { BaseTask } from '../types/baseTask';
-import { getSortedTaskList } from '../utils';
+import { getSortedTaskList, convertToFlatTaskList } from '../utils';
 
 import getGroupedTaskListWithAutoPosition from '../utils/position/getGroupedTaskListWithAutoPosition';
 import groupByOverlappingTimeRange from '../utils/position/groupByOverlappingTimesRange';
@@ -36,8 +36,8 @@ function useTimeTable<T extends BaseTask>({
   });
 
   // 일차원배열로 만들기.
-  const taskListWithAutoPosition = groupedTaskListWithAutoPosition.flatMap(
-    (group) => group,
+  const taskListWithAutoPosition = convertToFlatTaskList(
+    groupedTaskListWithAutoPosition,
   );
 
   const timeTableCallbackRef = useCallback((node: HTMLDivElement) => {

@@ -18,4 +18,4 @@ export {
 } from './size';
 export { getRandomColor, getTaskColor } from './color';
 export { getClassNameByType } from './css';
-export { getSortedTaskList } from './task';
+export { getSortedTaskList, convertToFlatTaskList } from './task';
