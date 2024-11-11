@@ -2,9 +2,10 @@
 
 import { useCallback, useRef } from 'react';
 import { BaseTask } from '../types/baseTask';
+import { getSortedTaskList } from '../utils';
 
 import setTaskListWithAutoPosition from '../utils/position/setTaskListWithAutoPosition';
-import groupByOverlappingTimesRange from '../utils/position/groupByOverlappingTimesRange';
+import groupByOverlappingTimeRange from '../utils/position/groupByOverlappingTimesRange';
 
 type UseTimeTableOption<T extends BaseTask> = {
   taskList: T[];
@@ -23,11 +24,9 @@ function useTimeTable<T extends BaseTask>({
   const timeTableRef = useRef<HTMLDivElement | null>(null);
 
   // sorting
-  const sortedTaskList = taskList.sort(
-    (a, b) => a.startTime.getTime() - b.startTime.getTime(),
-  );
+  const sortedTaskList = getSortedTaskList(taskList);
   // 그룹 묶기.
-  const groupedTaskList = groupByOverlappingTimesRange(sortedTaskList);
+  const groupedTaskList = groupByOverlappingTimeRange(sortedTaskList);
 
   // horizon, vertical position 부여하기
   const groupedTaskListWithAutoPosition = setTaskListWithAutoPosition({
