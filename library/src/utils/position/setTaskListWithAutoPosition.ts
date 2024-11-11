@@ -15,16 +15,16 @@ export default function setTaskListWithAutoPosition<T extends BaseTask>({
         endTime,
       );
 
-      const taskStyle = {
+      const style: React.CSSProperties = {
         position: 'absolute',
         left: `${(100 / group.length) * index}%`,
         width: `${100 / group.length}%`,
         ...taskVerticalStyle,
-      } as React.CSSProperties;
+      };
 
       return {
         ...task,
-        style: taskStyle,
+        style,
       };
     });
 
