@@ -4,7 +4,7 @@ import { useCallback, useRef } from 'react';
 import { BaseTask } from '../types/baseTask';
 import { getSortedTaskList } from '../utils';
 
-import setTaskListWithAutoPosition from '../utils/position/setTaskListWithAutoPosition';
+import getGroupedTaskListWithAutoPosition from '../utils/position/getGroupedTaskListWithAutoPosition';
 import groupByOverlappingTimeRange from '../utils/position/groupByOverlappingTimesRange';
 
 type UseTimeTableOption<T extends BaseTask> = {
@@ -29,7 +29,7 @@ function useTimeTable<T extends BaseTask>({
   const groupedTaskList = groupByOverlappingTimeRange(sortedTaskList);
 
   // horizon, vertical position 부여하기
-  const groupedTaskListWithAutoPosition = setTaskListWithAutoPosition({
+  const groupedTaskListWithAutoPosition = getGroupedTaskListWithAutoPosition({
     groupedTaskList,
     startTime,
     endTime,
