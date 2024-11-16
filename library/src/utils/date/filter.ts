@@ -1,4 +1,4 @@
-import { BaseTask } from '../../components/Timetable.type';
+import { BaseTask } from '../../types/baseTask';
 
 const selectTaskListByTimeRange = <T extends BaseTask>(
   taskList: T[],
