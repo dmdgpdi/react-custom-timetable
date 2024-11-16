@@ -1,15 +1,7 @@
-import {
-  hoursToMilliseconds,
-  minutesToMilliseconds,
-  secondsToMilliseconds,
-} from 'date-fns';
+const hoursToMilliseconds = (hours: number): number => hours * 60 * 60 * 1000;
+const minutesToMilliseconds = (minutes: number): number => minutes * 60 * 1000;
+const secondsToMilliseconds = (seconds: number): number => seconds * 1000;
 
-/**
- *
- * @deprecated 더이상 사용되지 않습니다.
- *
- * 만약 사용하고 싶다면 date-fns의 의존성을 없애야합니다.
- */
 const formatHourAndMinutes = (data: Date) => {
   const hours = data.getHours();
   const minutes = data.getMinutes();
@@ -19,12 +11,6 @@ const formatHourAndMinutes = (data: Date) => {
   return currentTime; // HH:MM
 };
 
-/**
- *
- * @deprecated 더이상 사용되지 않습니다.
- *
- * 만약 사용하고 싶다면 date-fns의 의존성을 없애야합니다.
- */
 const convertToMilliseconds = (date: Date) => {
   const hourMilliseconds = hoursToMilliseconds(date.getHours());
   const minutesMilliseconds = minutesToMilliseconds(date.getMinutes());
