@@ -1,7 +1,7 @@
 {
   "name": "react-custom-timetable",
   "description": "custom timetable for react",
-  "version": "0.0.10",
+  "version": "1.0.0",
   "keywords": [
     "timetable",
     "scheduler"
@@ -38,11 +38,6 @@
     "lint": "eslint '.'",
     "test": "yarn jest"
   },
-  "dependencies": {
-    "@floating-ui/react": "^0.26.22",
-    "date-fns": "^3.6.0",
-    "randomcolor": "^0.6.2"
-  },
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0"
@@ -50,9 +45,7 @@
   "devDependencies": {
     "@eslint/js": "9.10.0",
     "@jest/globals": "^29.7.0",
-    "@types/date-fns": "^2.6.0",
     "@types/node": "^22.7.4",
-    "@types/randomcolor": "^0.5.9",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "concurrently": "^9.0.1",
