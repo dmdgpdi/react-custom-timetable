@@ -1,8 +1,6 @@
-import {
-  hoursToMilliseconds,
-  minutesToMilliseconds,
-  secondsToMilliseconds,
-} from 'date-fns';
+const hoursToMilliseconds = (hours: number): number => hours * 60 * 60 * 1000;
+const minutesToMilliseconds = (minutes: number): number => minutes * 60 * 1000;
+const secondsToMilliseconds = (seconds: number): number => seconds * 1000;
 
 const formatHourAndMinutes = (data: Date) => {
   const hours = data.getHours();

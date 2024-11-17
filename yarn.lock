@@ -829,58 +829,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@floating-ui/core@npm:^1.6.0":
-  version: 1.6.7
-  resolution: "@floating-ui/core@npm:1.6.7"
-  dependencies:
-    "@floating-ui/utils": "npm:^0.2.7"
-  checksum: 10c0/5c9ae274854f87ed09a61de758377d444c2b13ade7fd1067d74287b3e66de5340ae1281e48604b631c540855a2595cfc717adf9a2331eaadc4fa6d28e8571f64
-  languageName: node
-  linkType: hard
-
-"@floating-ui/dom@npm:^1.0.0":
-  version: 1.6.10
-  resolution: "@floating-ui/dom@npm:1.6.10"
-  dependencies:
-    "@floating-ui/core": "npm:^1.6.0"
-    "@floating-ui/utils": "npm:^0.2.7"
-  checksum: 10c0/ed7d7b400e00b2f31f1b8f11863af2cb95d0d3cd84635186ca31b41d8d9fe7fe12c85e4985617d7df7ed365abad48b327d0bae35934842007b4e1052d9780576
-  languageName: node
-  linkType: hard
-
-"@floating-ui/react-dom@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "@floating-ui/react-dom@npm:2.1.1"
-  dependencies:
-    "@floating-ui/dom": "npm:^1.0.0"
-  peerDependencies:
-    react: ">=16.8.0"
-    react-dom: ">=16.8.0"
-  checksum: 10c0/732ab64600c511ceb0563b87bc557aa61789fec4f416a3f092bab89e508fa1d3ee5ade0f42051cc56eb5e4db867b87ab7fd48ce82db9fd4c01d94ffa08f60115
-  languageName: node
-  linkType: hard
-
-"@floating-ui/react@npm:^0.26.22":
-  version: 0.26.23
-  resolution: "@floating-ui/react@npm:0.26.23"
-  dependencies:
-    "@floating-ui/react-dom": "npm:^2.1.1"
-    "@floating-ui/utils": "npm:^0.2.7"
-    tabbable: "npm:^6.0.0"
-  peerDependencies:
-    react: ">=16.8.0"
-    react-dom: ">=16.8.0"
-  checksum: 10c0/d339c3d760e83c8384a16c8a38fb47f7f855a3db4d19117fd54cccbf871a27b089887202074e9871ffc19ad769bed709ecdd69445a39d2ea9406c84814427f3b
-  languageName: node
-  linkType: hard
-
-"@floating-ui/utils@npm:^0.2.7":
-  version: 0.2.7
-  resolution: "@floating-ui/utils@npm:0.2.7"
-  checksum: 10c0/0559ea5df2dc82219bad26e3509e9d2b70f6987e552dc8ddf7d7f5923cfeb7c44bf884567125b1f9cdb122a4c7e6e7ddbc666740bc30b0e4091ccbca63c6fb1c
-  languageName: node
-  linkType: hard
-
 "@humanwhocodes/config-array@npm:^0.13.0":
   version: 0.13.0
   resolution: "@humanwhocodes/config-array@npm:0.13.0"
@@ -1491,15 +1439,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/date-fns@npm:^2.6.0":
-  version: 2.6.0
-  resolution: "@types/date-fns@npm:2.6.0"
-  dependencies:
-    date-fns: "npm:*"
-  checksum: 10c0/d39ac03630001aa244d57a88ca08e91d3e7ff95c11979f1ccddba39e456735e15644dbbb706e1bc61458d3dbb70e6258f113784f6adc4f23b9fdea6dc830eb62
-  languageName: node
-  linkType: hard
-
 "@types/estree@npm:1.0.5":
   version: 1.0.5
   resolution: "@types/estree@npm:1.0.5"
@@ -1574,13 +1513,6 @@ __metadata:
   version: 15.7.12
   resolution: "@types/prop-types@npm:15.7.12"
   checksum: 10c0/1babcc7db6a1177779f8fde0ccc78d64d459906e6ef69a4ed4dd6339c920c2e05b074ee5a92120fe4e9d9f1a01c952f843ebd550bee2332fc2ef81d1706878f8
-  languageName: node
-  linkType: hard
-
-"@types/randomcolor@npm:^0.5.9":
-  version: 0.5.9
-  resolution: "@types/randomcolor@npm:0.5.9"
-  checksum: 10c0/236c1af0e4fd96835f61a4021ddf31b29ba74699c00e02bbbe26a365a13570e3e46f84ab581137281051dda422797923fc6c687f20cd2d99779311e873fdb7cc
   languageName: node
   linkType: hard
 
@@ -2597,20 +2529,6 @@ __metadata:
     es-errors: "npm:^1.3.0"
     is-data-view: "npm:^1.0.1"
   checksum: 10c0/21b0d2e53fd6e20cc4257c873bf6d36d77bd6185624b84076c0a1ddaa757b49aaf076254006341d35568e89f52eecd1ccb1a502cfb620f2beca04f48a6a62a8f
-  languageName: node
-  linkType: hard
-
-"date-fns@npm:*":
-  version: 4.1.0
-  resolution: "date-fns@npm:4.1.0"
-  checksum: 10c0/b79ff32830e6b7faa009590af6ae0fb8c3fd9ffad46d930548fbb5acf473773b4712ae887e156ba91a7b3dc30591ce0f517d69fd83bd9c38650fdc03b4e0bac8
-  languageName: node
-  linkType: hard
-
-"date-fns@npm:^3.6.0":
-  version: 3.6.0
-  resolution: "date-fns@npm:3.6.0"
-  checksum: 10c0/0b5fb981590ef2f8e5a3ba6cd6d77faece0ea7f7158948f2eaae7bbb7c80a8f63ae30b01236c2923cf89bb3719c33aeb150c715ea4fe4e86e37dcf06bed42fb6
   languageName: node
   linkType: hard
 
@@ -5876,13 +5794,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"randomcolor@npm:^0.6.2":
-  version: 0.6.2
-  resolution: "randomcolor@npm:0.6.2"
-  checksum: 10c0/845b8b4a31ff4a6fe590930217db93ca5741b0eb7b363c564d5db72d52449383bd4cc44b77b8ae64cf4b70118ef7b8b9062134743e9ec7a6798d6a6f84318a2a
-  languageName: node
-  linkType: hard
-
 "react-custom-timetable-monorepo@workspace:.":
   version: 0.0.0-use.local
   resolution: "react-custom-timetable-monorepo@workspace:."
@@ -5906,15 +5817,11 @@ __metadata:
   resolution: "react-custom-timetable@workspace:library"
   dependencies:
     "@eslint/js": "npm:9.10.0"
-    "@floating-ui/react": "npm:^0.26.22"
     "@jest/globals": "npm:^29.7.0"
-    "@types/date-fns": "npm:^2.6.0"
     "@types/node": "npm:^22.7.4"
-    "@types/randomcolor": "npm:^0.5.9"
     "@types/react": "npm:^18.3.5"
     "@types/react-dom": "npm:^18.3.0"
     concurrently: "npm:^9.0.1"
-    date-fns: "npm:^3.6.0"
     esbuild: "npm:^0.24.0"
     esbuild-plugin-inline-image: "npm:^0.0.9"
     esbuild-sass-plugin: "npm:^3.3.1"
@@ -5922,7 +5829,6 @@ __metadata:
     eslint-plugin-react-hooks: "npm:^4.6.2"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
-    randomcolor: "npm:^0.6.2"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     rimraf: "npm:^6.0.1"
@@ -6899,13 +6805,6 @@ __metadata:
   version: 3.2.4
   resolution: "symbol-tree@npm:3.2.4"
   checksum: 10c0/dfbe201ae09ac6053d163578778c53aa860a784147ecf95705de0cd23f42c851e1be7889241495e95c37cabb058edb1052f141387bef68f705afc8f9dd358509
-  languageName: node
-  linkType: hard
-
-"tabbable@npm:^6.0.0":
-  version: 6.2.0
-  resolution: "tabbable@npm:6.2.0"
-  checksum: 10c0/ced8b38f05f2de62cd46836d77c2646c42b8c9713f5bd265daf0e78ff5ac73d3ba48a7ca45f348bafeef29b23da7187c72250742d37627883ef89cbd7fa76898
   languageName: node
   linkType: hard
 

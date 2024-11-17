@@ -16,9 +16,6 @@ const baseConfig = {
     }),
     inlineImage(),
   ],
-  banner: {
-    js: '"use client";\nimport "./index.css";\n',
-  },
   external: ['react', 'react-dom'],
 };
 
