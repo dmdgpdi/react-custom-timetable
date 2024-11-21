@@ -11,11 +11,11 @@ In addition, if the time of the elements inside the time table overlaps, it can 
 
 [sandbox link](https://codesandbox.io/p/sandbox/react-custom-timetable-h2pl2y?file=%2Fsrc%2FApp.tsx%3A24%2C68)
 
-![demoImage](reactcustomtimetableDemoImage.png)
+![demoImage](./assets/reactcustomtimetableDemoImage.png)
 
 ## Screenshots
 
-![demoGif](timetablecodepen.gif)
+![demoGif](./assets/timetablecodepen.gif)
 
 ## Getting started :
 
