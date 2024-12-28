@@ -1,5 +1,5 @@
-import type { BaseTask } from '../../types/baseTask';
-import type { ReturnTaskType } from '../../types/taskReturnType';
+import type { BaseTask } from '@/types/baseTask';
+import type { ReturnTaskType } from '@/types/taskReturnType';
 import getTaskVerticalSizeStyle from './getTaskVerticalSizeStyle';
 
 export default function getGroupedTaskListWithAutoPosition<T extends BaseTask>({
