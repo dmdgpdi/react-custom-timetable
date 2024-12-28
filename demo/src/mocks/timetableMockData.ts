@@ -208,7 +208,38 @@ const taskListOverlapVersion = [
     title: '7title',
     content: '7subTitle',
     startTime: getTodayFromTime(23, 0, 0),
-    endTime: getTodayFromTime(24, 0, 0),
+    endTime: getTodayFromTime(23, 59, 59),
+  },
+];
+
+export const overnightTaskList = [
+  {
+    id: 1,
+    title: 'Task 1',
+    content: 'First Task',
+    startTime: new Date(new Date().setHours(17, 0, 0, 0)), // 17:00
+    endTime: new Date(new Date().setHours(19, 0, 0, 0)), // 19:00
+  },
+  {
+    id: 2,
+    title: 'Task 2',
+    content: 'Second Task',
+    startTime: new Date(new Date().setHours(20, 0, 0, 0)), // 20:00
+    endTime: new Date(new Date().setHours(22, 0, 0, 0)), // 22:00
+  },
+  {
+    id: 3,
+    title: 'Task 3',
+    content: 'Third Task',
+    startTime: new Date(new Date().setHours(23, 30, 0, 0)), // 23:30
+    endTime: new Date(new Date().setHours(1, 30, 0, 0)), // 다음 날 01:30
+  },
+  {
+    id: 4,
+    title: 'Task 4',
+    content: 'Fourth Task',
+    startTime: new Date(new Date().setHours(3, 0, 0, 0)), // 다음 날 03:00
+    endTime: new Date(new Date().setHours(6, 0, 0, 0)), // 다음 날 06:00
   },
 ];
 
