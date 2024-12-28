@@ -6,8 +6,6 @@ import { getSortedTaskList, convertToFlatTaskList } from '../utils';
 
 import getGroupedTaskListWithAutoPosition from '../utils/position/getGroupedTaskListWithAutoPosition';
 import groupByOverlappingTimeRange from '../utils/position/groupByOverlappingTimesRange';
-import { getDateNotBeforeMidnight } from '@/utils/getDateNotBeforeMidnight';
-import { getDateNotAfterEndOfDay } from '@/utils/getDateNotAfterEndOfDay';
 
 type UseTimeTableOption<T extends BaseTask> = {
   taskList: T[];
@@ -20,9 +18,6 @@ function useTimeTable<T extends BaseTask>({
   startTime = new Date(new Date().setHours(0, 0, 0, 0)), // 기본값: 오늘 00:00:00
   endTime = new Date(new Date().setHours(23, 59, 59, 999)), // 기본값: 오늘 23:59:59.999
 }: UseTimeTableOption<T>) {
-  startTime = getDateNotBeforeMidnight(startTime);
-  endTime = getDateNotAfterEndOfDay(endTime);
-
   const timeTableRef = useRef<HTMLDivElement | null>(null);
 
   // sorting
