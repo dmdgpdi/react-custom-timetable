@@ -1,5 +1,3 @@
-import { convertToMilliseconds } from './convertToMilliseconds';
-
 export const checkTimeOverlap = (
   startTime1: Date | null,
   endTime1: Date | null,
@@ -9,10 +7,10 @@ export const checkTimeOverlap = (
   if (!startTime1 || !endTime1 || !startTime2 || !endTime2) {
     return false;
   }
-  const startTime1Milliseconds = convertToMilliseconds(startTime1);
-  const endTime1Milliseconds = convertToMilliseconds(endTime1);
-  const startTime2Milliseconds = convertToMilliseconds(startTime2);
-  const endTime2Milliseconds = convertToMilliseconds(endTime2);
+  const startTime1Milliseconds = startTime1.getTime();
+  const endTime1Milliseconds = endTime1.getTime();
+  const startTime2Milliseconds = startTime2.getTime();
+  const endTime2Milliseconds = endTime2.getTime();
 
   return (
     startTime1Milliseconds < endTime2Milliseconds &&

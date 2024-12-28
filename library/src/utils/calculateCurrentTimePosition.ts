@@ -1,5 +1,3 @@
-import { convertToMilliseconds } from './convertToMilliseconds';
-
 export const calculateCurrentTimePosition = (
   currentTime: Date | null,
   startTime: Date,
@@ -11,9 +9,9 @@ export const calculateCurrentTimePosition = (
     return { currentTimePosition };
   }
 
-  const currentMilliseconds = convertToMilliseconds(currentTime); // 현재 시간
-  const startMilliseconds = convertToMilliseconds(startTime); // 슬롯의 시작 시간
-  const endMilliseconds = convertToMilliseconds(endTime); // 슬롯의 종료 시간
+  const currentMilliseconds = currentTime.getTime(); // 현재 시간
+  const startMilliseconds = startTime.getTime(); // 슬롯의 시작 시간
+  const endMilliseconds = endTime.getTime(); // 슬롯의 종료 시간
   currentTimePosition =
     ((currentMilliseconds - startMilliseconds) /
       (endMilliseconds - startMilliseconds)) *
