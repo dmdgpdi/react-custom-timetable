@@ -1,5 +1,5 @@
 import { describe, expect, it } from '@jest/globals';
-import { getTargetStartPosition } from './getTargetStartPosition'; // 파일 경로는 실제 위치에 맞게 조정해주세요
+import { getTargetStartPosition } from './getTargetStartPosition';
 
 describe('getTargetStartPosition', () => {
   it('calculates correct start position for same day target', () => {
