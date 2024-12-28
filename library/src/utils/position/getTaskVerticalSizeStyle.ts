@@ -1,20 +1,18 @@
 import { BaseTask } from '../../types/baseTask';
-import { calculateTargetHeightPercent } from '../calculateTargetHeightPercent';
-import { calculateTargetPosition } from '../calculateTargetPosition';
+import { getTargetHeightPercent } from '../getTargetHeightPercent';
+import { getTargetStartPosition } from '../getTargetStartPosition';
 
 export default function getTaskVerticalSizeStyle<T extends BaseTask>(
   task: T,
   startTime: Date,
   endTime: Date,
 ) {
-  const { startPercent, endPercent } = calculateTargetPosition(
+  const startPosition = getTargetStartPosition({
     startTime,
     endTime,
-    task.startTime,
-    task.endTime,
-  );
-
-  const taskHeightPercent = calculateTargetHeightPercent({
+    targetStartTime: task.startTime,
+  });
+  const taskHeightPercent = getTargetHeightPercent({
     startTime,
     endTime,
     targetStartTime: task.startTime,
@@ -22,7 +20,7 @@ export default function getTaskVerticalSizeStyle<T extends BaseTask>(
   });
 
   const taskStyle: React.CSSProperties = {
-    top: `${startPercent}%`,
+    top: `${startPosition}%`,
     height: `${taskHeightPercent}%`,
   };
 
