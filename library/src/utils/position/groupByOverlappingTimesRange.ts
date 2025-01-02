@@ -5,39 +5,40 @@ export default function groupByOverlappingTimeRange<T extends BaseTask>(
 ) {
   const groupedTasks: T[][] = [];
   let currentGroup: T[] = [];
-  let groupStartTime: number = Number.MAX_SAFE_INTEGER;
-  let groupEndTime: number = Number.MAX_SAFE_INTEGER;
+  let groupStartTime = Number.MAX_SAFE_INTEGER;
+  let groupEndTime = Number.MIN_SAFE_INTEGER;
 
   sortedTaskList.forEach((task) => {
     const taskStartTime = task.startTime.getTime();
     const taskEndTime = task.endTime.getTime();
 
-    // 1. groupEndTime보다 taskStartTime이 작고, taskEndTime이 groupEndTime보다 길 경우.
-    if (taskStartTime <= groupEndTime && groupEndTime <= taskEndTime) {
-      currentGroup.push(task);
+    // Case 1: New task starts after current group ends
+    if (taskStartTime > groupEndTime) {
+      if (currentGroup.length > 0) {
+        groupedTasks.push(currentGroup);
+      }
+      currentGroup = [task];
+      groupStartTime = taskStartTime;
       groupEndTime = taskEndTime;
-
-      return;
     }
-    // 2. groupStartTime보다 taskStartTime이 크고 groupEndTime보다 taskEndTime이 작을 경우.
-    if (groupStartTime <= taskStartTime && taskEndTime <= groupEndTime) {
+    // Case 2: New task ends before current group starts
+    else if (taskEndTime < groupStartTime) {
+      if (currentGroup.length > 0) {
+        groupedTasks.push(currentGroup);
+      }
+      currentGroup = [task];
+      groupStartTime = taskStartTime;
+      groupEndTime = taskEndTime;
+    }
+    // Case 3: New task overlaps with current group
+    else {
       currentGroup.push(task);
-
-      return;
+      groupStartTime = Math.min(groupStartTime, taskStartTime);
+      groupEndTime = Math.max(groupEndTime, taskEndTime);
     }
-
-    // 3. 겹치지 않으면 현재 그룹을 추가하고 새로운 그룹을 시작
-    if (currentGroup.length !== 0) {
-      groupedTasks.push(currentGroup);
-    }
-
-    currentGroup = [task];
-    groupStartTime = task.startTime.getTime();
-    groupEndTime = task.endTime.getTime();
-
-    return;
   });
 
+  // Add the last group
   if (currentGroup.length > 0) {
     groupedTasks.push(currentGroup);
   }

@@ -41,3 +41,8 @@ const COLOR_LIST_LENGTH = COLOR_LIST.length;
 
 export { FORMAT_LIST, COLOR_LIST, COLOR_LIST_LENGTH };
 export type { FormatType };
+
+/**
+ * @description 24 * 60 * 60 * 1000
+ */
+export const MILLISECONDS_IN_DAY = 86400000;

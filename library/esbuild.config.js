@@ -1,7 +1,5 @@
-/* eslint-disable no-undef */
+import process from 'process';
 import { context } from 'esbuild';
-import { sassPlugin } from 'esbuild-sass-plugin';
-import inlineImage from 'esbuild-plugin-inline-image';
 
 const watch = process.argv.includes('--watch');
 
@@ -10,13 +8,10 @@ const baseConfig = {
   outdir: 'dist',
   bundle: true,
   sourcemap: true,
-  plugins: [
-    sassPlugin({
-      type: 'local-css',
-    }),
-    inlineImage(),
-  ],
   external: ['react', 'react-dom'],
+  alias: {
+    '@': './src',
+  },
 };
 
 Promise.all([

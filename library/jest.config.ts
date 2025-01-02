@@ -1,4 +1,6 @@
 import type { Config } from 'jest';
+import { pathsToModuleNameMapper } from 'ts-jest';
+import { compilerOptions } from './tsconfig.json';
 
 const config: Config = {
   preset: 'ts-jest/presets/default',
@@ -8,10 +10,14 @@ const config: Config = {
     '^.+\\.tsx?$': [
       'ts-jest',
       {
-        tsconfig: './tsconfig.json', // tsconfig 파일 경로
+        tsconfig: './tsconfig.json',
       },
     ],
   },
+  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
+    prefix: '<rootDir>/',
+  }),
+  roots: ['<rootDir>'],
 };
 
 export default config;

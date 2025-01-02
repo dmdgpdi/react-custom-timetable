@@ -11,9 +11,6 @@ type UseTimeTableOption<T extends BaseTask> = {
   taskList: T[];
   startTime?: Date;
   endTime?: Date;
-  title?: string;
-  // 나머지 인자는 나중에 선택적 옵션으로 주면 될 것 같음.
-  // 그리고 initial value로 없으면 초기화.
 };
 
 function useTimeTable<T extends BaseTask>({
@@ -25,6 +22,7 @@ function useTimeTable<T extends BaseTask>({
 
   // sorting
   const sortedTaskList = getSortedTaskList(taskList);
+
   // 그룹 묶기.
   const groupedTaskList = groupByOverlappingTimeRange(sortedTaskList);
 
